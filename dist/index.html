@@ -54,6 +54,7 @@
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
+          swaggerApi.setSchemes([new URL(url).protocol.replace(":", "")]);
           if(typeof initOAuth == "function") {
             initOAuth({
               clientId: "your-client-id",
